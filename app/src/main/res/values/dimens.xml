@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="settings_width_normal_photo_image">55dp</dimen>
+    <dimen name="settings_height_normal_photo_image">55dp</dimen>
+    <dimen name="standart_margin_start">16dp</dimen>
+    <dimen name="settings_width_change_photo">45dp</dimen>
+    <dimen name="settings_height_change_photo">45dp</dimen>
+    <dimen name="settings_ripple_affect">4dp</dimen>
+</resources>
