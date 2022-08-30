@@ -1,8 +1,10 @@
 package com.example.fake
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.appcompat.widget.Toolbar
+import com.activities.RegisterActivity
 
 import com.example.fake.databinding.ActivityMainBinding
 import com.example.fake.ui.fragments.ChatsFragment
@@ -28,11 +30,17 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun initFunc() {
-        setSupportActionBar(toolBar)
-        appDrawer.create()
-        supportFragmentManager.beginTransaction()
-            .replace(R.id.dataContainer, ChatsFragment())
-            .commit()
+
+        if (false) {
+            setSupportActionBar(toolBar)
+            appDrawer.create()
+            supportFragmentManager.beginTransaction()
+                .replace(R.id.dataContainer, ChatsFragment())
+                .commit()
+        } else {
+            val intent = Intent(this, RegisterActivity::class.java)
+            startActivity(intent)
+        }
 
     }
 

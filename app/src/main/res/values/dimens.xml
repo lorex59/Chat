@@ -3,7 +3,14 @@
     <dimen name="settings_width_normal_photo_image">55dp</dimen>
     <dimen name="settings_height_normal_photo_image">55dp</dimen>
     <dimen name="standart_margin_start">16dp</dimen>
+    <dimen name="horizontal_margin">16dp</dimen>
+    <dimen name="vertical_margin">10sp</dimen>
+    <dimen name="vertical_large_margin">16dp</dimen>
     <dimen name="settings_width_change_photo">45dp</dimen>
     <dimen name="settings_height_change_photo">45dp</dimen>
     <dimen name="settings_ripple_affect">4dp</dimen>
+
+    <dimen name="standart_text_size">16sp</dimen>
+    <dimen name="small_text_size">14sp</dimen>
+    <dimen name="app_padding">5dp</dimen>
 </resources>
