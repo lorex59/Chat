@@ -1,33 +1,33 @@
 {
   "project_info": {
-    "project_number": "617256888356",
-    "project_id": "testchat-dd6b5",
-    "storage_bucket": "testchat-dd6b5.appspot.com"
+    "project_number": "29811254712",
+    "project_id": "chat-4b962",
+    "storage_bucket": "chat-4b962.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:617256888356:android:d58bc210d5b7d4287490b1",
+        "mobilesdk_app_id": "1:29811254712:android:fae8b0cfc67c0e8d60db4d",
         "android_client_info": {
           "package_name": "com.example.fake"
         }
       },
       "oauth_client": [
         {
-          "client_id": "617256888356-r7ke8nkg6hpglhaqrttlbme27geelo2o.apps.googleusercontent.com",
+          "client_id": "29811254712-mvh1k8s4eplc62vn31apcllgi2s81si1.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyAqP0pVdAKvnUXMSDwO7iFEYAEvAB8ewlY"
+          "current_key": "AIzaSyAE9cTqsD5UvOxPFuOdhb_O9rWinfqiYzE"
         }
       ],
       "services": {
         "appinvite_service": {
           "other_platform_oauth_client": [
             {
-              "client_id": "617256888356-r7ke8nkg6hpglhaqrttlbme27geelo2o.apps.googleusercontent.com",
+              "client_id": "29811254712-mvh1k8s4eplc62vn31apcllgi2s81si1.apps.googleusercontent.com",
               "client_type": 3
             }
           ]
