@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.Toolbar
 import com.example.fake.R
 import com.example.fake.ui.fragments.SettingsFragment
+import com.example.fake.ui.utilits.replaceFragment
 import com.mikepenz.materialdrawer.AccountHeader
 import com.mikepenz.materialdrawer.AccountHeaderBuilder
 import com.mikepenz.materialdrawer.Drawer
@@ -19,7 +20,7 @@ class AppDrawer(val mainActivity: AppCompatActivity, val toolbar: Toolbar) {
     private lateinit var drawer: Drawer
     private lateinit var header: AccountHeader
 
-    fun create(){
+    fun create() {
         createHeader()
         createDrawer()
     }
@@ -70,18 +71,15 @@ class AppDrawer(val mainActivity: AppCompatActivity, val toolbar: Toolbar) {
                     .withName("Вопросы о телеграм")
                     .withSelectable(false)
             )
-            .withOnDrawerItemClickListener(object : Drawer.OnDrawerItemClickListener{
+            .withOnDrawerItemClickListener(object : Drawer.OnDrawerItemClickListener {
                 override fun onItemClick(
                     view: View?,
                     position: Int,
                     drawerItem: IDrawerItem<*>
                 ): Boolean {
-                    when(position){
+                    when (position) {
                         7 -> {
-                            mainActivity.supportFragmentManager.beginTransaction()
-                                .addToBackStack(null)
-                                .replace(R.id.dataContainer, SettingsFragment())
-                                .commit()
+                            mainActivity.replaceFragment(SettingsFragment())
                         }
                     }
                     return false

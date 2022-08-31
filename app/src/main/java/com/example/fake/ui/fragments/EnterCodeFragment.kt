@@ -12,6 +12,7 @@ import androidx.fragment.app.Fragment
 import com.example.fake.R
 import com.example.fake.databinding.FragmentEnterCodeBinding
 import com.example.fake.ui.utilits.AppTextWatcher
+import com.example.fake.ui.utilits.showToast
 
 
 class EnterCodeFragment : Fragment(R.layout.fragment_enter_code) {
@@ -38,7 +39,7 @@ class EnterCodeFragment : Fragment(R.layout.fragment_enter_code) {
     }
 
     private fun verifiCode() {
-        Toast.makeText(activity, "Ok", Toast.LENGTH_SHORT).show()
+        showToast("Ok")
     }
 
 }

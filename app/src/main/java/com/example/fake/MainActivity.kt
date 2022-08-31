@@ -9,6 +9,8 @@ import com.activities.RegisterActivity
 import com.example.fake.databinding.ActivityMainBinding
 import com.example.fake.ui.fragments.ChatsFragment
 import com.example.fake.ui.objects.AppDrawer
+import com.example.fake.ui.utilits.replaceActivity
+import com.example.fake.ui.utilits.replaceFragment
 
 
 class MainActivity : AppCompatActivity() {
@@ -31,19 +33,15 @@ class MainActivity : AppCompatActivity() {
 
     private fun initFunc() {
 
-        if (false) {
+        if (true) {
             setSupportActionBar(toolBar)
             appDrawer.create()
-            supportFragmentManager.beginTransaction()
-                .replace(R.id.dataContainer, ChatsFragment())
-                .commit()
+            replaceFragment(ChatsFragment())
         } else {
-            val intent = Intent(this, RegisterActivity::class.java)
-            startActivity(intent)
+            replaceActivity(RegisterActivity())
         }
 
     }
-
 
 
     private fun initFields() {

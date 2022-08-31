@@ -4,11 +4,11 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Toast
 import androidx.fragment.app.Fragment
 import com.example.fake.R
-import com.example.fake.databinding.FragmentEnterCodeBinding
 import com.example.fake.databinding.FragmentEnterPhoneNumberBinding
+import com.example.fake.ui.utilits.replaceFragment
+import com.example.fake.ui.utilits.showToast
 
 
 class EnterPhoneNumberFragment : Fragment() {
@@ -30,12 +30,9 @@ class EnterPhoneNumberFragment : Fragment() {
 
     private fun sendCode() {
         if (binding.registerInputPhoneNumber.text.toString().isEmpty()) {
-            Toast.makeText(activity, "Введите телефон", Toast.LENGTH_SHORT).show()
+            showToast("Введите телефон")
         } else {
-            parentFragmentManager.beginTransaction()
-                .replace(R.id.registerContainer, EnterCodeFragment())
-                .addToBackStack(null)
-                .commit()
+            replaceFragment(EnterCodeFragment())
         }
     }
 
