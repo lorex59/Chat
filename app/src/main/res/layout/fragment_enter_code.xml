@@ -42,8 +42,9 @@
         app:layout_constraintTop_toBottomOf="@+id/register_text_view" />
 
     <EditText
-        android:id="@+id/register_input_phone_number"
+        android:id="@+id/register_input_code"
         style="@style/editText"
+        android:layout_width="wrap_content"
         android:gravity="center"
         android:maxLength="6"
         android:hint="@string/register_hint_default_code"

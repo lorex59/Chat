@@ -1,16 +1,16 @@
 package com.example.fake
 
-import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.Toolbar
 import com.activities.RegisterActivity
-
 import com.example.fake.databinding.ActivityMainBinding
 import com.example.fake.ui.fragments.ChatsFragment
 import com.example.fake.ui.objects.AppDrawer
+import com.example.fake.ui.utilits.AUTH
 import com.example.fake.ui.utilits.replaceActivity
 import com.example.fake.ui.utilits.replaceFragment
+import com.google.firebase.auth.FirebaseAuth
 
 
 class MainActivity : AppCompatActivity() {
@@ -33,10 +33,10 @@ class MainActivity : AppCompatActivity() {
 
     private fun initFunc() {
 
-        if (true) {
+        if (AUTH.currentUser != null) {
             setSupportActionBar(toolBar)
             appDrawer.create()
-            replaceFragment(ChatsFragment())
+            replaceFragment(ChatsFragment(), false)
         } else {
             replaceActivity(RegisterActivity())
         }
@@ -47,5 +47,6 @@ class MainActivity : AppCompatActivity() {
     private fun initFields() {
         toolBar = binding.mainToolBar
         appDrawer = AppDrawer(this, toolBar)
+        AUTH = FirebaseAuth.getInstance()
     }
 }

@@ -7,4 +7,5 @@
     <string name="register_text_we_sent">Мы отправили вам SMS с кодом проверки на ваш телефон</string>
     <string name="register_hint_default_code">- - - - - -</string>
     <string name="register_title">Ваш телефон</string>
+    <string name="register_phone_hint">----------</string>
 </resources>

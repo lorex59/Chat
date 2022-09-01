@@ -24,6 +24,6 @@ class RegisterActivity : AppCompatActivity() {
         toolbar = binding.registerToolbar
         setSupportActionBar(toolbar)
         title = getString(R.string.register_title)
-        replaceFragment(EnterPhoneNumberFragment())
+        replaceFragment(EnterPhoneNumberFragment(), false)
     }
 }
