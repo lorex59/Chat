@@ -5,7 +5,6 @@ import android.content.Intent
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
-import com.activities.RegisterActivity
 import com.example.fake.R
 
 fun Fragment.showToast(message: String) {

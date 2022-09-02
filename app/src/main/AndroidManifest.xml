@@ -10,7 +10,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Fake">
         <activity
-            android:name="com.activities.RegisterActivity"
+            android:name="com.example.fake.activities.RegisterActivity"
             android:windowSoftInputMode="stateVisible|adjustResize"
             android:exported="false" />
         <activity

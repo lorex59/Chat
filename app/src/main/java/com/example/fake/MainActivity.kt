@@ -3,11 +3,12 @@ package com.example.fake
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.Toolbar
-import com.activities.RegisterActivity
+import com.example.fake.activities.RegisterActivity
 import com.example.fake.databinding.ActivityMainBinding
 import com.example.fake.ui.fragments.ChatsFragment
 import com.example.fake.ui.objects.AppDrawer
 import com.example.fake.ui.utilits.AUTH
+import com.example.fake.ui.utilits.initFirebase
 import com.example.fake.ui.utilits.replaceActivity
 import com.example.fake.ui.utilits.replaceFragment
 import com.google.firebase.auth.FirebaseAuth
@@ -16,7 +17,7 @@ import com.google.firebase.auth.FirebaseAuth
 class MainActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityMainBinding
-    private lateinit var appDrawer: AppDrawer
+    lateinit var appDrawer: AppDrawer
     private lateinit var toolBar: Toolbar
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -47,6 +48,6 @@ class MainActivity : AppCompatActivity() {
     private fun initFields() {
         toolBar = binding.mainToolBar
         appDrawer = AppDrawer(this, toolBar)
-        AUTH = FirebaseAuth.getInstance()
+        initFirebase()
     }
 }

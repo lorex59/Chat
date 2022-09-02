@@ -1,4 +1,4 @@
-package com.activities
+package com.example.fake.activities
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -6,6 +6,7 @@ import androidx.appcompat.widget.Toolbar
 import com.example.fake.R
 import com.example.fake.databinding.ActivityRegisterBinding
 import com.example.fake.ui.fragments.EnterPhoneNumberFragment
+import com.example.fake.ui.utilits.initFirebase
 import com.example.fake.ui.utilits.replaceFragment
 
 class RegisterActivity : AppCompatActivity() {
@@ -17,6 +18,7 @@ class RegisterActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivityRegisterBinding.inflate(layoutInflater)
         setContentView(binding.root)
+        initFirebase()
     }
 
     override fun onStart() {

@@ -5,18 +5,16 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
-import com.activities.RegisterActivity
+import com.example.fake.activities.RegisterActivity
 import com.example.fake.MainActivity
 import com.example.fake.R
 import com.example.fake.databinding.FragmentEnterCodeBinding
-import com.example.fake.ui.utilits.AUTH
-import com.example.fake.ui.utilits.AppTextWatcher
-import com.example.fake.ui.utilits.replaceActivity
-import com.example.fake.ui.utilits.showToast
+import com.example.fake.ui.utilits.*
 import com.google.firebase.auth.PhoneAuthProvider
 
 
-class EnterCodeFragment(val phoneNumber: String, val id: String) : Fragment(R.layout.fragment_enter_code) {
+class EnterCodeFragment(val phoneNumber: String, val id: String) :
+    Fragment(R.layout.fragment_enter_code) {
 
     private lateinit var binding: FragmentEnterCodeBinding
 
@@ -46,8 +44,23 @@ class EnterCodeFragment(val phoneNumber: String, val id: String) : Fragment(R.la
         val credential = PhoneAuthProvider.getCredential(id, code)
         AUTH.signInWithCredential(credential).addOnCompleteListener {
             if (it.isSuccessful) {
-                showToast("Добро пожаловать")
-                (activity as RegisterActivity).replaceActivity(MainActivity())
+                val uid = AUTH.currentUser?.uid.toString()
+                var dateMap = mutableMapOf<String, Any>()
+                dateMap[CHILD_OD] = uid
+                dateMap[CHILD_PHONE] = phoneNumber
+                dateMap[CHILD_USERNAME] = uid
+
+                REF_DATA_BASE_ROOT.child(NODE_USERS).child(uid).updateChildren(dateMap)
+                    .addOnCompleteListener { task2 ->
+                        if (task2.isSuccessful) {
+                            showToast("Добро пожаловать")
+                            (activity as RegisterActivity).replaceActivity(MainActivity())
+                        } else {
+                            showToast(task2.exception?.message.toString())
+                        }
+                    }
+
+
             } else {
                 showToast(it.exception?.message.toString())
             }

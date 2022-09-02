@@ -5,7 +5,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
-import com.activities.RegisterActivity
+import com.example.fake.activities.RegisterActivity
 import com.example.fake.MainActivity
 import com.example.fake.databinding.FragmentEnterPhoneNumberBinding
 import com.example.fake.ui.utilits.AUTH
