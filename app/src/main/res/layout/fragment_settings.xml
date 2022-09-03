@@ -33,7 +33,7 @@
             android:layout_marginStart="@dimen/standart_margin_start"
             android:layout_marginTop="10dp"
             android:layout_marginEnd="@dimen/standart_margin_start"
-            android:text="Danil Danil"
+            tools:text="Danil Danil"
             android:textColor="@color/white"
             android:textSize="@dimen/standart_text_size"
             app:layout_constraintEnd_toEndOf="parent"
@@ -45,7 +45,7 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="@dimen/standart_margin_start"
             android:layout_marginEnd="@dimen/standart_margin_start"
-            android:text="В сети"
+            tools:text="В сети"
             android:textColor="@color/white"
             android:textSize="15sp"
             app:layout_constraintEnd_toEndOf="parent"
@@ -77,7 +77,7 @@
         <TextView
             android:id="@+id/setting_text_number"
             style="@style/normal_text"
-            android:text="+79644324111"
+            tools:text="+79644324111"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="@id/setting_btn_change_number_phone" />
 
@@ -105,7 +105,7 @@
         <TextView
             android:id="@+id/setting_user_name"
             style="@style/normal_text"
-            android:text="lorex59"
+            tools:text="lorex59"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="@id/setting_btn_change_user_name" />
 
@@ -133,7 +133,7 @@
         <TextView
             android:id="@+id/setting_bio"
             style="@style/normal_text"
-            android:text="О себе"
+            tools:text="О себе"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="@id/setting_btn_change_bio" />
 

@@ -24,6 +24,13 @@ class ChangeNameFragment : Fragment() {
     override fun onResume() {
         super.onResume()
         setHasOptionsMenu(true)
+        val tempListFullName = USER.fullname.split(" ")
+        if (tempListFullName.size > 1) {
+            binding.settingsInputName.setText(tempListFullName[0])
+            binding.settingsInputSurname.setText(tempListFullName[1])
+        } else {
+            binding.settingsInputName.setText(tempListFullName[0])
+        }
     }
 
     override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
