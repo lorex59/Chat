@@ -8,6 +8,7 @@ import com.example.fake.MainActivity
 import com.example.fake.R
 import com.example.fake.databinding.FragmentSettingsBinding
 import com.example.fake.ui.utilits.AUTH
+import com.example.fake.ui.utilits.USER
 import com.example.fake.ui.utilits.replaceActivity
 import com.example.fake.ui.utilits.replaceFragment
 
@@ -38,6 +39,20 @@ class SettingsFragment : Fragment(R.layout.fragment_settings) {
     override fun onResume() {
         super.onResume()
         setHasOptionsMenu(true)
+        initFields()
+    }
+
+    private fun initFields() {
+        with(binding) {
+            settingUserName.text = USER.username
+            settingFullName.text = USER.fullname
+            settingBio.text = USER.bio
+            settingPhoneNumber.text = USER.phone
+            settingStatus.text = USER.status
+            settingBtnChangeUserName.setOnClickListener {
+                replaceFragment(ChangeUsernameFragment())
+            }
+        }
     }
 
     override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
