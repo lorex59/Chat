@@ -5,13 +5,10 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.Toolbar
 import com.example.fake.activities.RegisterActivity
 import com.example.fake.databinding.ActivityMainBinding
+import com.example.fake.models.User
 import com.example.fake.ui.fragments.ChatsFragment
 import com.example.fake.ui.objects.AppDrawer
-import com.example.fake.ui.utilits.AUTH
-import com.example.fake.ui.utilits.initFirebase
-import com.example.fake.ui.utilits.replaceActivity
-import com.example.fake.ui.utilits.replaceFragment
-import com.google.firebase.auth.FirebaseAuth
+import com.example.fake.ui.utilits.*
 
 
 class MainActivity : AppCompatActivity() {
@@ -49,5 +46,13 @@ class MainActivity : AppCompatActivity() {
         toolBar = binding.mainToolBar
         appDrawer = AppDrawer(this, toolBar)
         initFirebase()
+        initUser()
+    }
+
+    private fun initUser() {
+        REF_DATA_BASE_ROOT.child(NODE_USERS).child(UID)
+            .addListenerForSingleValueEvent(AppValueEventListener {
+                USER = it.getValue(User::class.java) ?: User()
+            })
     }
 }

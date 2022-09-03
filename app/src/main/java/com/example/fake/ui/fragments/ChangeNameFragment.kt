@@ -50,7 +50,7 @@ class ChangeNameFragment : Fragment() {
                 .setValue(fullName).addOnCompleteListener {
                     if (it.isSuccessful) {
                         showToast("Данные обновлены")
-                        User.fullname = fullName
+                        USER.fullname = fullName
                         activity?.supportFragmentManager?.popBackStack()
                     } else {
                         showToast("Данные необновлены")
