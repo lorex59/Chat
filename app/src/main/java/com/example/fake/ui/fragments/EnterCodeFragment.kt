@@ -9,7 +9,6 @@ import com.example.fake.activities.RegisterActivity
 import com.example.fake.MainActivity
 import com.example.fake.R
 import com.example.fake.databinding.FragmentEnterCodeBinding
-import com.example.fake.ui.utilits.*
 import com.example.fake.utilits.*
 import com.google.firebase.auth.PhoneAuthProvider
 
@@ -47,7 +46,7 @@ class EnterCodeFragment(val phoneNumber: String, val id: String) :
             if (it.isSuccessful) {
                 val uid = AUTH.currentUser?.uid.toString()
                 var dateMap = mutableMapOf<String, Any>()
-                dateMap[CHILD_OD] = uid
+                dateMap[CHILD_ID] = uid
                 dateMap[CHILD_PHONE] = phoneNumber
                 dateMap[CHILD_USERNAME] = uid
 

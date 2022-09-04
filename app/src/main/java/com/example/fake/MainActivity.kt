@@ -8,7 +8,6 @@ import com.example.fake.databinding.ActivityMainBinding
 import com.example.fake.models.User
 import com.example.fake.ui.fragments.ChatsFragment
 import com.example.fake.ui.objects.AppDrawer
-import com.example.fake.ui.utilits.*
 import com.example.fake.utilits.*
 
 

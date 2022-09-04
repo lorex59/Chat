@@ -5,7 +5,6 @@ import android.view.*
 import com.example.fake.MainActivity
 import com.example.fake.R
 import com.example.fake.databinding.FragmentChangeNameBinding
-import com.example.fake.ui.utilits.*
 import com.example.fake.utilits.*
 
 
