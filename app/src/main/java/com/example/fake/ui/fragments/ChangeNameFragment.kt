@@ -2,14 +2,13 @@ package com.example.fake.ui.fragments
 
 import android.os.Bundle
 import android.view.*
-import androidx.fragment.app.Fragment
 import com.example.fake.MainActivity
 import com.example.fake.R
 import com.example.fake.databinding.FragmentChangeNameBinding
 import com.example.fake.ui.utilits.*
 
 
-class ChangeNameFragment : Fragment() {
+class ChangeNameFragment : BaseChangeFragment(R.layout.fragment_change_name) {
 
     private lateinit var binding: FragmentChangeNameBinding
 
@@ -23,7 +22,10 @@ class ChangeNameFragment : Fragment() {
 
     override fun onResume() {
         super.onResume()
-        setHasOptionsMenu(true)
+        initFullNameList()
+    }
+
+    private fun initFullNameList() {
         val tempListFullName = USER.fullname.split(" ")
         if (tempListFullName.size > 1) {
             binding.settingsInputName.setText(tempListFullName[0])
@@ -33,20 +35,8 @@ class ChangeNameFragment : Fragment() {
         }
     }
 
-    override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
-        (activity as MainActivity).menuInflater.inflate(R.menu.settings_menu_confirm, menu)
-    }
 
-    override fun onOptionsItemSelected(item: MenuItem): Boolean {
-        when (item.itemId) {
-            R.id.settings_confirm_change -> {
-                changeName()
-            }
-        }
-        return true
-    }
-
-    private fun changeName() {
+    override fun change() {
         val name = binding.settingsInputName.text.toString()
         val surname = binding.settingsInputSurname.text.toString()
         if (name.isEmpty()) {
@@ -66,14 +56,5 @@ class ChangeNameFragment : Fragment() {
         }
     }
 
-    override fun onStart() {
-        super.onStart()
-        (activity as MainActivity).appDrawer.disableDrawer()
-    }
-
-    override fun onStop() {
-        super.onStop()
-        (activity as MainActivity).appDrawer.enabledDrawer()
-    }
 
 }

@@ -113,7 +113,7 @@
         <TextView
             android:id="@+id/setting_label_user_name"
             style="@style/smallText"
-            android:text="Нажмите чтобы изменить номер телефона"
+            android:text="Нажмите чтобы изменить имя пользователя"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/setting_user_name" />
 

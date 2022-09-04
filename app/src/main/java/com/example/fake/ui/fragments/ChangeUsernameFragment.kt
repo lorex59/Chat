@@ -10,7 +10,7 @@ import com.example.fake.ui.utilits.*
 import java.util.*
 
 
-class ChangeUsernameFragment : Fragment() {
+class ChangeUsernameFragment : BaseChangeFragment(R.layout.fragment_change_username) {
 
     private lateinit var binding: FragmentChangeUsernameBinding
     lateinit var newUsername: String
@@ -19,29 +19,17 @@ class ChangeUsernameFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-
         binding = FragmentChangeUsernameBinding.inflate(inflater, container, false)
         return binding.root
     }
 
     override fun onResume() {
         super.onResume()
-        setHasOptionsMenu(true)
         binding.settingsInputUsername.setText(USER.username)
     }
 
-    override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
-        (activity as MainActivity).menuInflater.inflate(R.menu.settings_menu_confirm, menu)
-    }
 
-    override fun onOptionsItemSelected(item: MenuItem): Boolean {
-        when (item.itemId) {
-            R.id.settings_confirm_change -> change()
-        }
-        return true
-    }
-
-    private fun change() {
+    override fun change() {
         newUsername = binding.settingsInputUsername.text.toString().lowercase(Locale.getDefault())
         if (newUsername.isEmpty()) {
             showToast("Поле пустое")
