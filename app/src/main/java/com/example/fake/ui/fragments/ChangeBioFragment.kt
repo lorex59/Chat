@@ -7,10 +7,7 @@ import android.view.View
 import android.view.ViewGroup
 import com.example.fake.R
 import com.example.fake.databinding.FragmentChangeBioBinding
-import com.example.fake.utilits.NODE_USERS
-import com.example.fake.utilits.REF_DATA_BASE_ROOT
-import com.example.fake.utilits.UID
-import com.example.fake.utilits.USER
+import com.example.fake.utilits.*
 
 class ChangeBioFragment : BaseChangeFragment(R.layout.fragment_change_bio) {
 
@@ -30,7 +27,17 @@ class ChangeBioFragment : BaseChangeFragment(R.layout.fragment_change_bio) {
     }
 
     override fun change() {
-        REF_DATA_BASE_ROOT.child(NODE_USERS).child(UID).child(bio)
+        val newBIO = binding.settingsInputBio.text.toString()
+        REF_DATA_BASE_ROOT.child(NODE_USERS).child(UID).child(CHILD_BIO)
+            .setValue(newBIO).addOnCompleteListener {
+                if (it.isSuccessful) {
+                    showToast("Данные обновлены")
+                    USER.bio = newBIO
+                    parentFragmentManager.popBackStack()
+                } else {
+                    showToast("Данные необновлены")
+                }
+            }
     }
 
 }
