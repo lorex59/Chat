@@ -8,10 +8,10 @@ import androidx.fragment.app.Fragment
 import com.example.fake.activities.RegisterActivity
 import com.example.fake.MainActivity
 import com.example.fake.databinding.FragmentEnterPhoneNumberBinding
-import com.example.fake.ui.utilits.AUTH
-import com.example.fake.ui.utilits.replaceActivity
-import com.example.fake.ui.utilits.replaceFragment
-import com.example.fake.ui.utilits.showToast
+import com.example.fake.utilits.AUTH
+import com.example.fake.utilits.replaceActivity
+import com.example.fake.utilits.replaceFragment
+import com.example.fake.utilits.showToast
 import com.google.firebase.FirebaseException
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.PhoneAuthCredential

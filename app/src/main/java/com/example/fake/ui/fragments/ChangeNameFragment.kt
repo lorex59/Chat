@@ -6,6 +6,7 @@ import com.example.fake.MainActivity
 import com.example.fake.R
 import com.example.fake.databinding.FragmentChangeNameBinding
 import com.example.fake.ui.utilits.*
+import com.example.fake.utilits.*
 
 
 class ChangeNameFragment : BaseChangeFragment(R.layout.fragment_change_name) {

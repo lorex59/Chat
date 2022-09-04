@@ -10,6 +10,7 @@ import com.example.fake.MainActivity
 import com.example.fake.R
 import com.example.fake.databinding.FragmentEnterCodeBinding
 import com.example.fake.ui.utilits.*
+import com.example.fake.utilits.*
 import com.google.firebase.auth.PhoneAuthProvider
 
 

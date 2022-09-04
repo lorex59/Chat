@@ -1,4 +1,4 @@
-package com.example.fake.ui.utilits
+package com.example.fake.utilits
 
 import com.google.firebase.database.DataSnapshot
 import com.google.firebase.database.DatabaseError

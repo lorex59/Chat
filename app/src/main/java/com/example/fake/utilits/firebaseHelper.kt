@@ -1,4 +1,4 @@
-package com.example.fake.ui.utilits
+package com.example.fake.utilits
 
 import com.example.fake.models.User
 import com.google.firebase.auth.FirebaseAuth

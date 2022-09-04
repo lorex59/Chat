@@ -7,10 +7,10 @@ import com.example.fake.activities.RegisterActivity
 import com.example.fake.MainActivity
 import com.example.fake.R
 import com.example.fake.databinding.FragmentSettingsBinding
-import com.example.fake.ui.utilits.AUTH
-import com.example.fake.ui.utilits.USER
-import com.example.fake.ui.utilits.replaceActivity
-import com.example.fake.ui.utilits.replaceFragment
+import com.example.fake.utilits.AUTH
+import com.example.fake.utilits.USER
+import com.example.fake.utilits.replaceActivity
+import com.example.fake.utilits.replaceFragment
 
 
 class SettingsFragment : Fragment(R.layout.fragment_settings) {
@@ -51,6 +51,9 @@ class SettingsFragment : Fragment(R.layout.fragment_settings) {
             settingStatus.text = USER.status
             settingBtnChangeUserName.setOnClickListener {
                 replaceFragment(ChangeUsernameFragment())
+            }
+            settingBtnChangeBio.setOnClickListener {
+                replaceFragment(ChangeBioFragment())
             }
         }
     }

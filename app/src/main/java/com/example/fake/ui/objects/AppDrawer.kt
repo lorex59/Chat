@@ -6,7 +6,7 @@ import androidx.appcompat.widget.Toolbar
 import androidx.drawerlayout.widget.DrawerLayout
 import com.example.fake.R
 import com.example.fake.ui.fragments.SettingsFragment
-import com.example.fake.ui.utilits.replaceFragment
+import com.example.fake.utilits.replaceFragment
 import com.mikepenz.materialdrawer.AccountHeader
 import com.mikepenz.materialdrawer.AccountHeaderBuilder
 import com.mikepenz.materialdrawer.Drawer
