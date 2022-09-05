@@ -10,6 +10,10 @@ import com.example.fake.databinding.ActivityMainBinding
 import com.example.fake.ui.fragments.ChatsFragment
 import com.example.fake.ui.objects.AppDrawer
 import com.example.fake.utilits.*
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.GlobalScope
+import kotlinx.coroutines.launch
 
 
 class MainActivity : AppCompatActivity() {
@@ -26,17 +30,15 @@ class MainActivity : AppCompatActivity() {
         APP_ACTIVITY = this
         initFirebase()
         initUser {
-            initContact()
+            CoroutineScope(Dispatchers.IO).launch {
+                initContact()
+            }
             initFields()
             initFunc()
         }
     }
 
-    private fun initContact() {
-        if (checkPermissions(READ_CONTACTS)) {
-            showToast("Чтение контактов")
-        }
-    }
+
 
     private fun initFunc() {
         if (AUTH.currentUser != null) {
