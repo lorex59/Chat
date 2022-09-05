@@ -48,7 +48,7 @@ class SettingsFragment : Fragment(R.layout.fragment_settings) {
             settingFullName.text = USER.fullname
             settingBio.text = USER.bio
             settingPhoneNumber.text = USER.phone
-            settingStatus.text = USER.status
+            settingStatus.text = USER.state
             settingBtnChangeUserName.setOnClickListener {
                 replaceFragment(ChangeUsernameFragment())
             }

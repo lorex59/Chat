@@ -11,6 +11,10 @@ fun Fragment.showToast(message: String) {
     Toast.makeText(this.context, message, Toast.LENGTH_LONG).show()
 }
 
+fun AppCompatActivity.showToast(message: String) {
+    Toast.makeText(this, message, Toast.LENGTH_LONG).show()
+}
+
 fun AppCompatActivity.replaceActivity(activity: Activity) {
     val intent = Intent(this, activity::class.java)
     startActivity(intent)
