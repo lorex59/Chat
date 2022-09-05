@@ -43,11 +43,12 @@ class ChangeNameFragment : BaseChangeFragment(R.layout.fragment_change_name) {
             showToast("Имя необходимо заполнить")
         } else {
             val fullName = "$name $surname"
-            REF_DATA_BASE_ROOT.child(NODE_USERS).child(UID).child(CHILD_FULLNAME)
+            REF_DATA_BASE_ROOT.child(NODE_USERS).child(CURRENT_UID).child(CHILD_FULLNAME)
                 .setValue(fullName).addOnCompleteListener {
                     if (it.isSuccessful) {
                         showToast("Данные обновлены")
                         USER.fullname = fullName
+                        (activity as MainActivity).appDrawer.updateHeaderProfile()
                         activity?.supportFragmentManager?.popBackStack()
                     } else {
                         showToast("Данные необновлены")

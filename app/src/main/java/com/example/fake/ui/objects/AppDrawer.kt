@@ -6,6 +6,7 @@ import androidx.appcompat.widget.Toolbar
 import androidx.drawerlayout.widget.DrawerLayout
 import com.example.fake.R
 import com.example.fake.ui.fragments.SettingsFragment
+import com.example.fake.utilits.USER
 import com.example.fake.utilits.replaceFragment
 import com.mikepenz.materialdrawer.AccountHeader
 import com.mikepenz.materialdrawer.AccountHeaderBuilder
@@ -21,6 +22,8 @@ class AppDrawer(val mainActivity: AppCompatActivity, val toolbar: Toolbar) {
     private lateinit var drawer: Drawer
     private lateinit var header: AccountHeader
     private lateinit var drawerLayout: DrawerLayout
+    private lateinit var profile: ProfileDrawerItem
+
 
     fun create() {
         createHeader()
@@ -111,14 +114,26 @@ class AppDrawer(val mainActivity: AppCompatActivity, val toolbar: Toolbar) {
     }
 
     private fun createHeader() {
+        profile = ProfileDrawerItem()
+            .withName(USER.fullname)
+            .withEmail(USER.phone)
+            .withIdentifier(200)
         header = AccountHeaderBuilder()
             .withActivity(mainActivity)
             .withHeaderBackground(R.drawable.header)
             .addProfiles(
-                ProfileDrawerItem().withName("Danil Danil")
-                    .withEmail("+79644324111")
+                profile
             ).build()
     }
+
+    fun updateHeaderProfile() {
+        profile
+            .withName(USER.fullname)
+            .withEmail(USER.phone)
+
+        header.updateProfile(profile)
+    }
+
 }
 
 

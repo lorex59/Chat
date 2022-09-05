@@ -28,7 +28,7 @@ class ChangeBioFragment : BaseChangeFragment(R.layout.fragment_change_bio) {
 
     override fun change() {
         val newBIO = binding.settingsInputBio.text.toString()
-        REF_DATA_BASE_ROOT.child(NODE_USERS).child(UID).child(CHILD_BIO)
+        REF_DATA_BASE_ROOT.child(NODE_USERS).child(CURRENT_UID).child(CHILD_BIO)
             .setValue(newBIO).addOnCompleteListener {
                 if (it.isSuccessful) {
                     showToast("Данные обновлены")

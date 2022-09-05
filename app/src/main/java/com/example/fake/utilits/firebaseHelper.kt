@@ -8,7 +8,7 @@ import com.google.firebase.storage.FirebaseStorage
 import com.google.firebase.storage.StorageReference
 
 lateinit var AUTH: FirebaseAuth
-lateinit var UID: String
+lateinit var CURRENT_UID: String
 lateinit var REF_DATA_BASE_ROOT: DatabaseReference
 lateinit var REF_STORAGE_ROOT: StorageReference
 lateinit var USER: User
@@ -28,5 +28,17 @@ fun initFirebase() {
     REF_DATA_BASE_ROOT = FirebaseDatabase.getInstance().reference
     REF_STORAGE_ROOT = FirebaseStorage.getInstance().reference
     USER = User()
-    UID = AUTH.currentUser?.uid.toString()
+    CURRENT_UID = AUTH.currentUser?.uid.toString()
+
+}
+
+inline fun initUser(crossinline function: () -> Unit) {
+    REF_DATA_BASE_ROOT.child(NODE_USERS).child(CURRENT_UID)
+        .addListenerForSingleValueEvent(AppValueEventListener {
+            USER = it.getValue(User::class.java) ?: User()
+            if (USER.username.isEmpty()) {
+                USER.username = CURRENT_UID
+            }
+            function()
+        })
 }

@@ -2,8 +2,6 @@ package com.example.fake.ui.fragments
 
 import android.os.Bundle
 import android.view.*
-import androidx.fragment.app.Fragment
-import com.example.fake.MainActivity
 import com.example.fake.R
 import com.example.fake.databinding.FragmentChangeUsernameBinding
 import com.example.fake.utilits.*
@@ -46,7 +44,7 @@ class ChangeUsernameFragment : BaseChangeFragment(R.layout.fragment_change_usern
     }
 
     private fun changeUsername() {
-        REF_DATA_BASE_ROOT.child(NODE_USERNAMES).child(newUsername).setValue(UID)
+        REF_DATA_BASE_ROOT.child(NODE_USERNAMES).child(newUsername).setValue(CURRENT_UID)
             .addOnCompleteListener {
                 if (it.isSuccessful) {
                     updateCurrentUsername()
@@ -55,7 +53,7 @@ class ChangeUsernameFragment : BaseChangeFragment(R.layout.fragment_change_usern
     }
 
     private fun updateCurrentUsername() {
-        REF_DATA_BASE_ROOT.child(NODE_USERS).child(UID).child(CHILD_USERNAME)
+        REF_DATA_BASE_ROOT.child(NODE_USERS).child(CURRENT_UID).child(CHILD_USERNAME)
             .setValue(newUsername)
             .addOnCompleteListener {
                 if (it.isSuccessful) {

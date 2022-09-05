@@ -55,15 +55,9 @@ class SettingsFragment : Fragment(R.layout.fragment_settings) {
             settingBtnChangeBio.setOnClickListener {
                 replaceFragment(ChangeBioFragment())
             }
-            settingChangePhoto.setOnClickListener {
-                changePhotoUser()
-            }
         }
     }
 
-    private fun changePhotoUser() {
-
-    }
 
     override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
         activity?.menuInflater?.inflate(R.menu.settings_action_menu, menu)
